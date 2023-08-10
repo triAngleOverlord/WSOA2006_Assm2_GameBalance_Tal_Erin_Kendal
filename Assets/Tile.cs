@@ -11,19 +11,11 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
 {
     Transform parentAfterDrag;
 
-    public TileObject tile;
-
     public Transform ParentAfterDrag //The transform of the parent inventory slot allowing the item
                                      //we are dragging to be placed in the same position as the inventory slot it is left on
     {
         get { return parentAfterDrag; }
         set { parentAfterDrag = value; }
-    }
-
-    public void InitialiseTile(TileObject newTile)
-    {
-        tile = newTile;
-        GetComponent<Image>().sprite = newItem.itemSprite;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
