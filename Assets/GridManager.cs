@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class GridManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<GridSlot> gridSlotsList = new List<GridSlot>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject tilePrefab;
+    public GameObject gridSlotPrefab;
+
+    
 }
