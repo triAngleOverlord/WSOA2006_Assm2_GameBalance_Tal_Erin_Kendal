@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class GridSlot : MonoBehaviour
+public class GridSlot : MonoBehaviour, IDropHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnDrop(PointerEventData eventData)
     {
-        
-    }
+        if (transform.childCount == 0)
+        {
+            GameObject droppedTile = eventData.pointerDrag;
+            Tile tile = droppedTile.GetComponent<Tile>();
+            tile.ParentAfterDrag = transform;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
