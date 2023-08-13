@@ -1,16 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     Transform parentAfterDrag;
+    PixelToWorld pixelConverter;
+    public Rigidbody2D rigidTile;
 
+    public GameManager.Symbol symbol;
+
+    public void Awake()
+    {
+        pixelConverter = GetComponent<PixelToWorld>();
+        rigidTile = GetComponent<Rigidbody2D>();
+    }
     public Transform ParentAfterDrag //The transform of the parent inventory slot allowing the item
                                      //we are dragging to be placed in the same position as the inventory slot it is left on
     {
@@ -23,9 +27,12 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             parentAfterDrag = transform.parent;
-            transform.SetParent(transform.root);
+            if (parentAfterDrag.GetComponent<GridSlot>().sequenceBL == true)
+                parentAfterDrag.GetComponent<GridSlot>().symbol = GameManager.Symbol.Nothing;
+            transform.SetParent(transform.root, true);
             transform.SetAsLastSibling();
             GetComponent<Image>().raycastTarget = false;
+            rigidTile.bodyType = RigidbodyType2D.Dynamic;
         }
 
     }
@@ -34,7 +41,9 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            transform.position = Input.mousePosition;
+            //transform.position = pixelConverter.ConvertToWorldUnits(Input.mousePosition);
+
+            rigidTile.MovePosition(pixelConverter.ConvertToWorldUnits(Input.mousePosition));
         }
 
     }
@@ -44,7 +53,9 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             transform.SetParent(parentAfterDrag);
+            transform.localPosition= Vector2.zero;
             GetComponent<Image>().raycastTarget = true;
+            rigidTile.bodyType = RigidbodyType2D.Kinematic;
         }
     }
 
