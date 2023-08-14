@@ -27,8 +27,12 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             parentAfterDrag = transform.parent;
+            
             if (parentAfterDrag.GetComponent<GridSlot>().sequenceBL == true)
+            {
                 parentAfterDrag.GetComponent<GridSlot>().symbol = GameManager.Symbol.Nothing;
+            }
+
             transform.SetParent(transform.root, true);
             transform.SetAsLastSibling();
             GetComponent<Image>().raycastTarget = false;
@@ -41,8 +45,6 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            //transform.position = pixelConverter.ConvertToWorldUnits(Input.mousePosition);
-
             rigidTile.MovePosition(pixelConverter.ConvertToWorldUnits(Input.mousePosition));
         }
 
