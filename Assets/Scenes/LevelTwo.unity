@@ -1801,22 +1801,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boundaries
       objectReference: {fileID: 0}
-    - target: {fileID: 3108326097739471115, guid: 3fa1c8bf0d4da824eb636d19fa718ad7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108326098126448277, guid: 3fa1c8bf0d4da824eb636d19fa718ad7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108326099229374897, guid: 3fa1c8bf0d4da824eb636d19fa718ad7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108326099486334255, guid: 3fa1c8bf0d4da824eb636d19fa718ad7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.69
-      objectReference: {fileID: 0}
     - target: {fileID: 7160775277679379070, guid: 3fa1c8bf0d4da824eb636d19fa718ad7, type: 3}
       propertyPath: m_RootOrder
       value: 3
