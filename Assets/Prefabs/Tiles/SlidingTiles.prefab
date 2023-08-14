@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8236892449193206079}
   - component: {fileID: 8236892449193206068}
-  - component: {fileID: 8236892449193206069}
-  - component: {fileID: 8236892449193206066}
   - component: {fileID: 8236892449193206067}
   - component: {fileID: 8236892449193206064}
   - component: {fileID: 8236892449193206065}
   - component: {fileID: 8236892449193206078}
+  - component: {fileID: 8236892449193206069}
+  - component: {fileID: 8236892449193206066}
   m_Layer: 0
   m_Name: SlidingTiles
   m_TagString: Untagged
@@ -95,35 +95,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8236892449193206069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8236892449193206076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36b2d347ac1965e42b03178c7f1a7b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WorldUnitsInCamera: {x: 0, y: 0}
-  WorldToPixelAmount: {x: 0, y: 0}
-  Camera: {fileID: 0}
---- !u!114 &8236892449193206066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8236892449193206076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7e341db7f8f6fc498201681eb6c4e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidTile: {fileID: 0}
-  symbol: 0
 --- !u!50 &8236892449193206067
 Rigidbody2D:
   serializedVersion: 4
@@ -209,3 +180,32 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8236892449193206069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236892449193206076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b2d347ac1965e42b03178c7f1a7b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorldUnitsInCamera: {x: 0, y: 0}
+  WorldToPixelAmount: {x: 0, y: 0}
+  Camera: {fileID: 0}
+--- !u!114 &8236892449193206066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236892449193206076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e341db7f8f6fc498201681eb6c4e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidTile: {fileID: 0}
+  symbol: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1832943993094845564}
   - component: {fileID: 1832943992796790862}
   m_Layer: 5
-  m_Name: GridSot
+  m_Name: GridSlot
   m_TagString: GridSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
