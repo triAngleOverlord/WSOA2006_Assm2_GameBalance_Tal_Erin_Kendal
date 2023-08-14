@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public List<Symbol> sequence;
     public List<GameObject> sequenceBlocks;
+    public PixelToWorld pxConverter;
 
     public enum Symbol
     {
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        DontDestroyOnLoad(gameObject);
 
     }
 

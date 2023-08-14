@@ -12,7 +12,7 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
 
     public void Awake()
     {
-        pixelConverter = GetComponent<PixelToWorld>();
+        pixelConverter = GameManager.Instance.pxConverter;
         rigidTile = GetComponent<Rigidbody2D>();
     }
     public Transform ParentAfterDrag //The transform of the parent inventory slot allowing the item
