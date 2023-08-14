@@ -8,10 +8,12 @@ public class PixelToWorld : MonoBehaviour
     public Vector2 WorldUnitsInCamera;
     public Vector2 WorldToPixelAmount;
 
-    public GameObject Camera;
+    public Camera Camera;
 
     void Awake()
     {
+        Camera = Camera.main;
+        
         //Finding Pixel To World Unit Conversion Based On Orthographic Size Of Camera
         WorldUnitsInCamera.y = Camera.GetComponent<Camera>().orthographicSize * 2;
         WorldUnitsInCamera.x = WorldUnitsInCamera.y * Screen.width / Screen.height;

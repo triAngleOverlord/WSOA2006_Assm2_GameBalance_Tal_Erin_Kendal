@@ -333,11 +333,11 @@ PrefabInstance:
     - target: {fileID: 2024288350533978068, guid: 61b7db678de0ed54aa16f882ac256d56, type: 3}
       propertyPath: Camera
       value: 
-      objectReference: {fileID: 519420028}
+      objectReference: {fileID: 0}
     - target: {fileID: 2024288350771282610, guid: 61b7db678de0ed54aa16f882ac256d56, type: 3}
       propertyPath: Camera
       value: 
-      objectReference: {fileID: 519420028}
+      objectReference: {fileID: 0}
     - target: {fileID: 2024288351163599332, guid: 61b7db678de0ed54aa16f882ac256d56, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
