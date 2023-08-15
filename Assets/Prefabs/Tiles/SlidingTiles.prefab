@@ -191,5 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e341db7f8f6fc498201681eb6c4e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidTile: {fileID: 0}
+  rigidTile: {fileID: 8236892449193206067}
   symbol: 0

@@ -10,7 +10,7 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
 
     public GameManager.Symbol symbol;
 
-    public void Awake()
+    public void OnAwake()
     {
         pixelConverter = GameManager.Instance.pxConverter;
         rigidTile = GetComponent<Rigidbody2D>();
