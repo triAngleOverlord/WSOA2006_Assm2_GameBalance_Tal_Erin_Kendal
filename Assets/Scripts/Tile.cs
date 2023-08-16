@@ -15,17 +15,9 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     public bool mouseDirectionCalculated;
     public Vector2 ogMouse;
 
-<<<<<<< HEAD
     public GameObject notePanel;
 
-
-=======
-<<<<<<< HEAD
-    public void OnAwake()
-=======
->>>>>>> parent of 8d5bb80 (removed merge error markers)
     public void Start()
->>>>>>> main
     {
         pixelConverter = GameManager.Instance.pxConverter;
         rigidTile = transform.GetComponent<Rigidbody2D>();

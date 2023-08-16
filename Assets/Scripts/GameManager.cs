@@ -10,12 +10,8 @@ public class GameManager : MonoBehaviour
     public PixelToWorld pxConverter;
     public static Level currentL;
 
-<<<<<<< HEAD
-    
-=======
     public static int labelMax;
     public static int labelCurrent;
->>>>>>> main
 
     public enum Symbol
     {
