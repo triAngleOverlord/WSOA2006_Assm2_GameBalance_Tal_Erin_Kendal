@@ -85,24 +85,25 @@ public class GameManager : MonoBehaviour
             }
 
         bool correct = true;
-        int i = 0;
-        while (correct == true || i < sequence.Count)
+        
+        for (int i = 0; i < sequence.Count; i++)
         {
-            if (sequence[i] == submission[i])
+            if (sequence[i] != submission[i])
             {
-                i++;
-            }
-            else
                 correct = false;
+            }
+              
         }
 
         if (correct == true)
         {
             //next level load
+            Debug.Log("You are correct!");
         }
         else
         {
             //display that the player is wrong
+            Debug.Log("You are incorrect!");
         }
 
 
