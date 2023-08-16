@@ -11,12 +11,17 @@ public class GridSlot : MonoBehaviour, IDropHandler
         {
             GameObject droppedTile = eventData.pointerDrag;
             Tile tile = droppedTile.GetComponent<Tile>();
-            tile.ParentAfterDrag = transform;
-
-            if (sequenceBL == true)
+            if (tile.mouseOverTile==true)
             {
-                symbol = tile.symbol;
+                tile.ParentAfterDrag = transform;
+
+                if (sequenceBL == true)
+                {
+                    symbol = tile.symbol;
+                }
+
             }
+            
 
         }
 

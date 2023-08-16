@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,6 +10,10 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     public Rigidbody2D rigidTile;
 
     public GameManager.Symbol symbol;
+    public bool mouseOverTile;
+
+    public bool mouseDirectionCalculated;
+    public Vector2 ogMouse;
 
 
     public void Start()
@@ -39,6 +44,8 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
             transform.SetAsLastSibling();
             GetComponent<Image>().raycastTarget = false;
             rigidTile.bodyType = RigidbodyType2D.Dynamic;
+            detectDirection();
+            
         }
 
     }
@@ -47,7 +54,21 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            rigidTile.MovePosition(pixelConverter.ConvertToWorldUnits(Input.mousePosition));
+            if (mouseDirectionCalculated == true)
+            {
+
+                rigidTile.MovePosition(pixelConverter.ConvertToWorldUnits(Input.mousePosition));
+
+                Vector2 lp;
+                Vector2 mousePos = Input.mousePosition;
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponent<RectTransform>(), mousePos, Camera.main, out lp);
+
+                if (GetComponent<RectTransform>().rect.Contains(lp))
+                    mouseOverTile = true;
+                else
+                    mouseOverTile = false;
+
+            }
         }
 
     }
@@ -60,6 +81,10 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
             transform.localPosition= Vector2.zero;
             GetComponent<Image>().raycastTarget = true;
             rigidTile.bodyType = RigidbodyType2D.Kinematic;
+            mouseDirectionCalculated = false;
+            rigidTile.constraints = RigidbodyConstraints2D.None;
+            rigidTile.constraints = RigidbodyConstraints2D.FreezeRotation;
+            mouseDirectionCalculated = false;
         }
     }
 
@@ -69,5 +94,26 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         {
             Debug.Log("Right click");
         }
+    }
+
+    public void detectDirection()
+    {
+        ogMouse = pixelConverter.ConvertToWorldUnits(Input.mousePosition);
+        var mouseChange = pixelConverter.ConvertToWorldUnits(Input.mousePosition);
+        var mouseX = Mathf.Abs(ogMouse.x - mouseChange.x);
+        var mouseY = Mathf.Abs(ogMouse.y - mouseChange.y);
+        while (mouseX < 1 || mouseY < 1)
+        {
+            mouseChange = pixelConverter.ConvertToWorldUnits(Input.mousePosition);
+            mouseX = Mathf.Abs(ogMouse.x - mouseChange.x);
+            mouseY = Mathf.Abs(ogMouse.y - mouseChange.y);
+        }
+        
+        if (mouseX > mouseY)
+            rigidTile.constraints = RigidbodyConstraints2D.FreezePositionX;
+        else if (mouseX < mouseY)
+            rigidTile.constraints = RigidbodyConstraints2D.FreezePositionY;
+
+        mouseDirectionCalculated = true;
     }
 }
