@@ -80,13 +80,13 @@ public class GameManager : MonoBehaviour
         submission.Clear();
         GameObject[] allSequenceObjects = GameObject.FindGameObjectsWithTag("Sequence");
         foreach (GameObject seqObject in allSequenceObjects)
-        {
-            submission.Add(seqObject.GetComponent<Symbol>());
-        }
+            {
+                submission.Add(seqObject.transform.GetComponent<GridSlot>().symbol);
+            }
 
         bool correct = true;
         int i = 0;
-        while (correct == true || i<sequence.Count)
+        while (correct == true || i < sequence.Count)
         {
             if (sequence[i] == submission[i])
             {
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
                 correct = false;
         }
 
-        if(correct == true)
+        if (correct == true)
         {
             //next level load
         }
@@ -104,6 +104,10 @@ public class GameManager : MonoBehaviour
         {
             //display that the player is wrong
         }
+
+
+
+
 
 
     }
