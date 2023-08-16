@@ -163,7 +163,7 @@ RectTransform:
   m_GameObject: {fileID: 4888623304790427134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0.005, y: 0.005, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4779790014038521065}
@@ -449,5 +449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e341db7f8f6fc498201681eb6c4e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pixelConverter: {fileID: 0}
   rigidTile: {fileID: 8236892449193206067}
   symbol: 0

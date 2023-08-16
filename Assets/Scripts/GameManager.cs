@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public PixelToWorld pxConverter;
     public static Level currentL;
 
+    
+
     public enum Symbol
     {
          Nothing ,A, B, C, D, E, F
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+
 
         DontDestroyOnLoad(gameObject);
 

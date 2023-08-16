@@ -10,9 +10,17 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
 
     public GameManager.Symbol symbol;
 
+<<<<<<< HEAD
+    public GameObject notePanel;
 
+
+=======
+<<<<<<< HEAD
+    public void OnAwake()
+=======
+>>>>>>> parent of 8d5bb80 (removed merge error markers)
     public void Start()
-
+>>>>>>> main
     {
         pixelConverter = GameManager.Instance.pxConverter;
         rigidTile = transform.GetComponent<Rigidbody2D>();
