@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequence: 
-  sequenceBlocks: []
+  submission: 
   pxConverter: {fileID: 1515978313539717431}
 --- !u!114 &1515978313539717431
 MonoBehaviour:

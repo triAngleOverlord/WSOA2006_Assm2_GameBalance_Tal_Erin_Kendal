@@ -44,8 +44,9 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
             transform.SetAsLastSibling();
             GetComponent<Image>().raycastTarget = false;
             rigidTile.bodyType = RigidbodyType2D.Dynamic;
-            detectDirection();
-            
+
+            ogMouse = pixelConverter.ConvertToWorldUnits(Input.mousePosition);
+
         }
 
     }
@@ -54,6 +55,12 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
+            if (mouseDirectionCalculated == false)
+            {
+               // Debug.Log("Mouse has not moved");
+                mouseDirectionCalculated = detectDirection();
+            }
+            
             if (mouseDirectionCalculated == true)
             {
 
@@ -69,6 +76,7 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
                     mouseOverTile = false;
 
             }
+                
         }
 
     }
@@ -96,24 +104,26 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         }
     }
 
-    public void detectDirection()
+    public bool detectDirection()
     {
-        ogMouse = pixelConverter.ConvertToWorldUnits(Input.mousePosition);
         var mouseChange = pixelConverter.ConvertToWorldUnits(Input.mousePosition);
-        var mouseX = Mathf.Abs(ogMouse.x - mouseChange.x);
-        var mouseY = Mathf.Abs(ogMouse.y - mouseChange.y);
-        while (mouseX < 1 || mouseY < 1)
-        {
-            mouseChange = pixelConverter.ConvertToWorldUnits(Input.mousePosition);
-            mouseX = Mathf.Abs(ogMouse.x - mouseChange.x);
-            mouseY = Mathf.Abs(ogMouse.y - mouseChange.y);
-        }
-        
-        if (mouseX > mouseY)
-            rigidTile.constraints = RigidbodyConstraints2D.FreezePositionX;
-        else if (mouseX < mouseY)
-            rigidTile.constraints = RigidbodyConstraints2D.FreezePositionY;
+        var mouseX = Mathf.Abs(ogMouse.x-mouseChange.x);
+        var mouseY = Mathf.Abs(ogMouse.y- mouseChange.y);
 
-        mouseDirectionCalculated = true;
+        if(mouseX >1 || mouseY >1)
+        {
+            if (mouseX > mouseY)
+            {
+                rigidTile.constraints = RigidbodyConstraints2D.FreezePositionY;
+            }
+            else if (mouseX < mouseY)
+            {
+                rigidTile.constraints = RigidbodyConstraints2D.FreezePositionX;
+                
+            }
+            return true;
+        }
+
+        else { return false; }
     }
 }
