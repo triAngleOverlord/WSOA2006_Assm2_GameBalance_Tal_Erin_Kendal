@@ -35,6 +35,8 @@ public class PixelToWorld : MonoBehaviour
 
         return returnVec2;
     }
+
+    ///script reference: Healyourself, 18 March 2017; Pixel To World Unit Conversion; Forums, Unity; https://forum.unity.com/threads/pixel-to-world-unit-conversion.461640/
 }
 
 

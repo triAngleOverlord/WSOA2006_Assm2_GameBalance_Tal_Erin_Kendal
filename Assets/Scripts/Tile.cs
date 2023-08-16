@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerClickHandler
 {
     Transform parentAfterDrag;
     public PixelToWorld pixelConverter;
@@ -63,5 +63,11 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         }
     }
 
-
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
+        {
+            Debug.Log("Right click");
+        }
+    }
 }

@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public PixelToWorld pxConverter;
     public static Level currentL;
 
+    public static int labelMax;
+    public static int labelCurrent;
+
     public enum Symbol
     {
          Nothing ,A, B, C, D, E, F
@@ -17,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public enum Level
     {
-        one, two
+        one, two, three, four, five, six
     }
 
     public void Awake()
@@ -41,13 +44,46 @@ public class GameManager : MonoBehaviour
     {
         switch (currentL)
         {
-            case Level.one: sequence.Clear(); sequence.Add(Symbol.A); sequence.Add(Symbol.B); sequence.Add(Symbol.D); break;
+            case Level.one: sequence.Clear(); 
+                            sequence.Add(Symbol.A); sequence.Add(Symbol.B); sequence.Add(Symbol.D);
+                            labelMax = 5;
+                break;
+            case Level.two: sequence.Clear();
+                            sequence.Add(Symbol.A); sequence.Add(Symbol.B); sequence.Add(Symbol.D);
+                            labelMax = 5;
+                break;
+            case Level.three:sequence.Clear();
+                             sequence.Add(Symbol.A); sequence.Add(Symbol.B); sequence.Add(Symbol.D);
+                             labelMax = 5;
+                break;
+            case Level.four:sequence.Clear();
+                            sequence.Add(Symbol.A); sequence.Add(Symbol.B); sequence.Add(Symbol.D);
+                            labelMax = 5;
+                break;
+            case Level.five:sequence.Clear();
+                            sequence.Add(Symbol.A); sequence.Add(Symbol.B); sequence.Add(Symbol.D);
+                            labelMax = 5;
+                break;
+            case Level.six: sequence.Clear();
+                            sequence.Add(Symbol.A); sequence.Add(Symbol.B); sequence.Add(Symbol.D);
+                            labelMax = 5;
+                break;
         }
+
+        submission.Clear();
+        labelCurrent = 0;
     }
 
 
-    public void checkSequence()
+    public void checkSequence()//will be added to the apply button
     {
+        submission.Clear();
+        GameObject[] allSequenceObjects = GameObject.FindGameObjectsWithTag("Sequence");
+        foreach (GameObject seqObject in allSequenceObjects)
+        {
+            submission.Add(seqObject.GetComponent<Symbol>());
+        }
+
         bool correct = true;
         int i = 0;
         while (correct == true || i<sequence.Count)
@@ -58,6 +94,15 @@ public class GameManager : MonoBehaviour
             }
             else
                 correct = false;
+        }
+
+        if(correct == true)
+        {
+            //next level load
+        }
+        else
+        {
+            //display that the player is wrong
         }
 
 
