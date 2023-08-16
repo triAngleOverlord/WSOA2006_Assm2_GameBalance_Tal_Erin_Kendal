@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,6 +15,7 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     public Vector2 ogMouse;
 
     public GameObject notePanel;
+
 
     public void Start()
     {
@@ -101,6 +101,8 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
         {
             Debug.Log("Right click");
+            //open panel
+            GameManager.Instance.currentTile = GetComponent<SpriteRenderer>();
         }
     }
 
