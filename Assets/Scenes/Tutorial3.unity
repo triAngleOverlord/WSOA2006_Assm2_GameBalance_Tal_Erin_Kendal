@@ -342,8 +342,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'If you get especially lost, you can always use a label from my label book.
-    Just select the ingredient you want to label and choose the label you want from
-    the book.
+    Just open the book (right click) and drag the label you want onto the ingredient
+    you want.
 
     But I only have a few labels, don''t forget that.'
   m_isRightToLeft: 0
