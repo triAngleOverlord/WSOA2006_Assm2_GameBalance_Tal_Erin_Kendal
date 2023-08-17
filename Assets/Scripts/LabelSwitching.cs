@@ -1,20 +1,162 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LabelSwitching : MonoBehaviour
 {
-    public List<Image> bookImages = new List<Image>();
-    
-    //list for all the images with labels for the buttons in the book to reference
-    //one list for each symbol button with the 3 color variations
-    //button pressing will cycle through the color variations
+    [SerializeField] Sprite greenEgg,blueEgg,greenCandy,blueCandy,greenTooth,blueTooth,greenBeetle,
+                            blueBeetle,greenPlant,bluePlant,greenWing,blueWing,greenVile,blueVile,greenEye,blueEye;
 
-    //wand will apply label and close book increases currentLabel amount on GameManager
-    //button to make no label which decreases currentLabel amount on GameManager
-    //label must not work if the max labels have been reached
+    [SerializeField] GameObject book;
+    [SerializeField] GameObject selectionBox;
 
 
-    //BUTTON FUNCTIONS
-    //currentTile.sprite = labslList[2]
+    public void GreenEgg()
+    {
+        GameManager.Instance.currentTile.sprite = greenEgg;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void BlueEgg()
+    {
+        GameManager.Instance.currentTile.sprite = blueEgg;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void GreenCandy()
+    {
+        GameManager.Instance.currentTile.sprite = greenCandy;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void BlueCandy()
+    {
+        GameManager.Instance.currentTile.sprite = blueCandy;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void GreenTooth()
+    {
+        GameManager.Instance.currentTile.sprite = greenTooth;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void BlueTooth()
+    {
+        GameManager.Instance.currentTile.sprite = blueTooth;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void GreenBeetle()
+    {
+        GameManager.Instance.currentTile.sprite = greenBeetle;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void BlueBeetle()
+    {
+        GameManager.Instance.currentTile.sprite = blueBeetle;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void GreenPlant()
+    {
+        GameManager.Instance.currentTile.sprite = greenPlant;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void BluePlant()
+    {
+        GameManager.Instance.currentTile.sprite = bluePlant;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void GreenWing()
+    {
+        GameManager.Instance.currentTile.sprite = greenWing;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void BlueWing()
+    {
+        GameManager.Instance.currentTile.sprite = blueWing;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void GreenVile()
+    {
+        GameManager.Instance.currentTile.sprite = greenVile;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void BlueVile()
+    {
+        GameManager.Instance.currentTile.sprite = blueVile;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void GreenEye()
+    {
+        GameManager.Instance.currentTile.sprite = greenEye;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+    public void BlueEye()
+    {
+        GameManager.Instance.currentTile.sprite = blueEye;
+        book = GameObject.Find("Book");
+        selectionBox = GameManager.Instance.currentTile.transform.GetChild(0).gameObject;
+        book.SetActive(false);
+        selectionBox.SetActive(false);
+    }
+
+
+
+
 }
