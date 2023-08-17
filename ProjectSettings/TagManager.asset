@@ -7,6 +7,7 @@ TagManager:
   - MTiles
   - GridSlot
   - Sequence
+  - Book
   layers:
   - Default
   - TransparentFX

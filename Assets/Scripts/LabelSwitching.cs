@@ -1,8 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LabelSwitching : MonoBehaviour
 {
-
+    public List<Image> bookImages = new List<Image>();
+    
     //list for all the images with labels for the buttons in the book to reference
     //one list for each symbol button with the 3 color variations
     //button pressing will cycle through the color variations

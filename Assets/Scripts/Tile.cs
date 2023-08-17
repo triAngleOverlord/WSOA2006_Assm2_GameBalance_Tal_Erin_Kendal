@@ -14,14 +14,17 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     public bool mouseDirectionCalculated;
     public Vector2 ogMouse;
 
-    public GameObject notePanel;
+    public GameObject book;
+    public GameObject selectBox;
 
 
     public void Start()
     {
         pixelConverter = GameManager.Instance.pxConverter;
         rigidTile = transform.GetComponent<Rigidbody2D>();
+        
     }
+
     public Transform ParentAfterDrag //The transform of the parent inventory slot allowing the item
                                      //we are dragging to be placed in the same position as the inventory slot it is left on
     {
@@ -101,7 +104,8 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
         {
             Debug.Log("Right click");
-            //open panel
+            book.SetActive(true);
+            selectBox.SetActive(true);
             GameManager.Instance.currentTile = GetComponent<SpriteRenderer>();
         }
     }
