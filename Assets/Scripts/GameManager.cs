@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public static int labelCurrent;
 
     public Image currentTile;
+    public GameObject book;
 
     public enum Symbol
     {
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(book);
 
 
     }
