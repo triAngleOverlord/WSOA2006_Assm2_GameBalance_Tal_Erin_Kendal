@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public List<Symbol> submission;
     public PixelToWorld pxConverter;
     public static Level currentL;
+    public static int numLevel;
 
     public static int labelMax;
     public static int labelCurrent;
@@ -19,14 +20,13 @@ public class GameManager : MonoBehaviour
     {
          Nothing ,
         GBeetle, GVile, GWing, GEyeball, GEgg, GTooth, GCandy, GPlant, 
-        BBeetle, BVile, BWing, BEyeball, BEgg, BTooth, BCandy, BPlant,
-        YBeetle, YVile, YWing, YEyeball, YEgg, YTooth, YCandy, YPlant
+        BBeetle, BVile, BWing, BEyeball, BEgg, BTooth, BCandy, BPlant
     }
 
 
     public enum Level
     {
-        one, two, three, four, five, six
+        menu ,one, two, three, four, five
     }
 
     public void Awake()
@@ -40,40 +40,53 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-
+        currentL = Level.menu;
         DontDestroyOnLoad(gameObject);
 
         sequence.Add(Symbol.GBeetle);
 
     }
 
-    public void changeLevel()
+    public void changeLevel(int level)
     {
+        if (level == 1)
+            currentL = Level.one;
+        else if (level == 2)
+            currentL = Level.two;
+        else if (level == 3)
+            currentL = Level.three;
+        else if (level == 4)
+            currentL = Level.four;
+        else if (level == 5)
+            currentL = Level.five;
+
+
         switch (currentL)
         {
-            case Level.one: sequence.Clear(); 
+            case Level.one:
+                SceneManager.LoadScene("LevelOne"); sequence.Clear(); 
                             sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
-                            labelMax = 5;
+                            labelMax = 4; 
                 break;
-            case Level.two: sequence.Clear();
+            case Level.two:
+                SceneManager.LoadScene("LevelTwo"); sequence.Clear();
                             sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
-                            labelMax = 5;
+                            labelMax = 4;
                 break;
-            case Level.three:sequence.Clear();
+            case Level.three:
+                SceneManager.LoadScene("LevelThree"); sequence.Clear();
                              sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
-                             labelMax = 5;
+                             labelMax = 3;
                 break;
-            case Level.four:sequence.Clear();
+            case Level.four:
+                SceneManager.LoadScene("LevelFour"); sequence.Clear();
                             sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
-                            labelMax = 5;
+                            labelMax = 3;
                 break;
-            case Level.five:sequence.Clear();
+            case Level.five:
+                SceneManager.LoadScene("LevelFive"); sequence.Clear();
                             sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
-                            labelMax = 5;
-                break;
-            case Level.six: sequence.Clear();
-                            sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
-                            labelMax = 5;
+                            labelMax = 3;
                 break;
         }
 
@@ -106,7 +119,9 @@ public class GameManager : MonoBehaviour
         {
             //next level load
             Debug.Log("You are correct!");
-            SceneManager.LoadScene("");
+            numLevel++;
+            changeLevel(numLevel);
+            
         }
         else
         {
@@ -114,10 +129,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("You are incorrect!");
         }
 
+    }
 
-
-
-
+    public void playBTN()
+    {
+        numLevel = 1;
+        changeLevel(1);
     }
 
     
