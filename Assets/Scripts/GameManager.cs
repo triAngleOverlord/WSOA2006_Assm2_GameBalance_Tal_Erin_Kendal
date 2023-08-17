@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public List<Symbol> sequence = new List<Symbol> ();
     public List<Symbol> submission;
     public PixelToWorld pxConverter;
-    public static Level currentL;
+    public Level currentL;
     public static int numLevel;
 
     public static int labelMax;
@@ -40,10 +40,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        currentL = Level.menu;
         DontDestroyOnLoad(gameObject);
 
-        sequence.Add(Symbol.GBeetle);
 
     }
 
@@ -65,28 +63,28 @@ public class GameManager : MonoBehaviour
         {
             case Level.one:
                 SceneManager.LoadScene("LevelOne"); sequence.Clear(); 
-                            sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
+                            sequence.Add(Symbol.GVile); sequence.Add(Symbol.GCandy); sequence.Add(Symbol.GBeetle);
                             labelMax = 4; 
                 break;
             case Level.two:
                 SceneManager.LoadScene("LevelTwo"); sequence.Clear();
-                            sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
+                            sequence.Add(Symbol.GEyeball); sequence.Add(Symbol.GPlant); sequence.Add(Symbol.GWing);
                             labelMax = 4;
                 break;
             case Level.three:
                 SceneManager.LoadScene("LevelThree"); sequence.Clear();
-                             sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
+                             sequence.Add(Symbol.GCandy); sequence.Add(Symbol.GEgg); sequence.Add(Symbol.GTooth);
                              labelMax = 3;
                 break;
             case Level.four:
                 SceneManager.LoadScene("LevelFour"); sequence.Clear();
-                            sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
-                            labelMax = 3;
+                            sequence.Add(Symbol.BBeetle); sequence.Add(Symbol.GEyeball); sequence.Add(Symbol.GTooth); sequence.Add(Symbol.BEgg);
+                labelMax = 3;
                 break;
             case Level.five:
                 SceneManager.LoadScene("LevelFive"); sequence.Clear();
-                            sequence.Add(Symbol.GBeetle); sequence.Add(Symbol.GVile); sequence.Add(Symbol.GEyeball);
-                            labelMax = 3;
+                            sequence.Add(Symbol.GVile); sequence.Add(Symbol.BWing); sequence.Add(Symbol.BVile); sequence.Add(Symbol.GPlant);
+                labelMax = 3;
                 break;
         }
 
