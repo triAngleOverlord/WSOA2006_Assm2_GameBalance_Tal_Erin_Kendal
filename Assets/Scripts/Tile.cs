@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
 
     public void Start()
     {
-        pixelConverter = GameManager.Instance.pxConverter;
+        pixelConverter = GameObject.Find("Main Camera").GetComponent<PixelToWorld>(); 
         rigidTile = transform.GetComponent<Rigidbody2D>();
         
     }

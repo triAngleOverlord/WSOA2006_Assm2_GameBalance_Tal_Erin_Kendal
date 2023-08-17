@@ -7,9 +7,10 @@ public class PixelToWorld : MonoBehaviour
 
     public Camera Camera;
 
-    void Awake()
+    public void Awake()
     {
         Camera = Camera.main;
+        Debug.Log("Camera");
         
         //Finding Pixel To World Unit Conversion Based On Orthographic Size Of Camera
         WorldUnitsInCamera.y = Camera.GetComponent<Camera>().orthographicSize * 2;

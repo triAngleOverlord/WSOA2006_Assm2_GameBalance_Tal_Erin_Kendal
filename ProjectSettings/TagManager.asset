@@ -8,6 +8,7 @@ TagManager:
   - GridSlot
   - Sequence
   - Book
+  - Reference
   layers:
   - Default
   - TransparentFX
