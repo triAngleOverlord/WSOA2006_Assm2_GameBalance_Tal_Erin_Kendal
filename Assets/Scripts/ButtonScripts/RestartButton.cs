@@ -7,7 +7,8 @@ public class RestartButton : MonoBehaviour
 {
     public void OnPlayButton()
     {
-        SceneManager.LoadScene("LevelOne");
+        //SceneManager.LoadScene("LevelOne");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Start is called before the first frame update
