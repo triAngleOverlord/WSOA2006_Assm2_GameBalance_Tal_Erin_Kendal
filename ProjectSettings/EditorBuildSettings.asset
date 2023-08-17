@@ -36,11 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelFive.unity
     guid: e827a21a12455ef4caa7e8bbfda2ace2
   - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/EndScene.unity
-    guid: 1c4f6d6448b6cf546b48d2ec6ee21907
-=======
     path: Assets/Scenes/LoseScene.unity
     guid: 399144ab16abfc743b72aa596b0c15f2
->>>>>>> main
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 1c4f6d6448b6cf546b48d2ec6ee21907
   m_configObjects: {}

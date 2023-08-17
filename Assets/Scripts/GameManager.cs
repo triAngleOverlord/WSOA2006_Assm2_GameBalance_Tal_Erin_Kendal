@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public List<Symbol> sequence = new List<Symbol> ();
     public List<Symbol> submission;
-    //public PixelToWorld pxConverter;
     public Level currentL;
     public static int numLevel;
     public static int wrong;
@@ -44,9 +43,10 @@ public class GameManager : MonoBehaviour
         }
 
         //pxConverter = GameObject.Find("Main Camera").GetComponent<PixelToWorld>();
+        numLevel = 1;
+
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(book);
-
 
     }
 
