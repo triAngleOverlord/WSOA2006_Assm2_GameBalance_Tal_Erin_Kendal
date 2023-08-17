@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1515978313539717429}
   - component: {fileID: 1515978313539717430}
   - component: {fileID: 1515978313539717431}
+  - component: {fileID: 697543304144353835}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   sequence: 
   submission: 
   pxConverter: {fileID: 1515978313539717431}
+  currentTile: {fileID: 0}
 --- !u!114 &1515978313539717431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,3 +65,32 @@ MonoBehaviour:
   WorldUnitsInCamera: {x: 0, y: 0}
   WorldToPixelAmount: {x: 0, y: 0}
   Camera: {fileID: 0}
+--- !u!114 &697543304144353835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515978313539717432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd3fb5de26c4ae44ab0a8eef53797d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greenEgg: {fileID: 21300000, guid: cbc3cc3c2c54f334b91db7d75e77fd47, type: 3}
+  blueEgg: {fileID: 21300000, guid: 8c9630316c886cc41a5120a4639b0c1a, type: 3}
+  greenCandy: {fileID: 21300000, guid: bde1d332feb512d4191eea9d7ab82a06, type: 3}
+  blueCandy: {fileID: 21300000, guid: e5e89096d674c504d8e12142444b18c6, type: 3}
+  greenTooth: {fileID: 21300000, guid: 8d3e2ead88d7a094c801afcfeae58e52, type: 3}
+  blueTooth: {fileID: 21300000, guid: 1131a2473cfa5d247989a10a5be1e372, type: 3}
+  greenBeetle: {fileID: 21300000, guid: d3da582a090daeb439b79188692e5ea7, type: 3}
+  blueBeetle: {fileID: 21300000, guid: b8a78e53bde55a24fac9d7c8ec88dcdb, type: 3}
+  greenPlant: {fileID: 21300000, guid: 8d53b3ce19b80514e9849e3ff2f1473d, type: 3}
+  bluePlant: {fileID: 21300000, guid: baf574189c0cc9d42942673ae0512b98, type: 3}
+  greenWing: {fileID: 21300000, guid: e83efce5527a2e240aaa3380a3315863, type: 3}
+  blueWing: {fileID: 21300000, guid: fe5f68e1629cde749acdec00e260c947, type: 3}
+  greenVile: {fileID: 21300000, guid: 7dd40933fe6676c488e38518e77fddcf, type: 3}
+  blueVile: {fileID: 21300000, guid: 102c383c6fd94584d870126d031195d9, type: 3}
+  greenEye: {fileID: 21300000, guid: 3d7fc609778edba41a63dd3bfcdb819c, type: 3}
+  blueEye: {fileID: 21300000, guid: 94fc1f284a047194e8c85de50164d922, type: 3}
+  book: {fileID: 0}
