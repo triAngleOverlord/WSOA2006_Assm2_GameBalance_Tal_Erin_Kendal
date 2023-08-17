@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public PixelToWorld pxConverter;
     public Level currentL;
     public static int numLevel;
+    public static int wrong;
 
     public static int labelMax;
     public static int labelCurrent;
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
         }
 
         submission.Clear();
+        wrong = 0;
         labelCurrent = 0;
     }
 
@@ -124,7 +126,14 @@ public class GameManager : MonoBehaviour
         else
         {
             //display that the player is wrong
+            wrong++;
             Debug.Log("You are incorrect!");
+
+            if (wrong == 3)
+            {
+                SceneManager.LoadScene("LoseScene");
+            }
+                
         }
 
     }
@@ -135,6 +144,10 @@ public class GameManager : MonoBehaviour
         changeLevel(1);
     }
 
+    public void tryAgain()
+    {
+        SceneManager.LoadScene("Menu");/////
+    }
     
 
 }
