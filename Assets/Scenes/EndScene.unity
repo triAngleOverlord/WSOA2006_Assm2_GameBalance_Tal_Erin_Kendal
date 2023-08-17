@@ -564,7 +564,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 779623312}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAgainBttn, Assembly-CSharp
         m_MethodName: OnPlayButton
         m_Mode: 1
         m_Arguments:
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 779623307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 831865edee69e3840b53d71b55c893ac, type: 3}
+  m_Script: {fileID: 11500000, guid: aec8d3ea952acae4e851a2ff7bb808eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &821379896

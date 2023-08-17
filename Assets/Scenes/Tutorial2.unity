@@ -341,11 +341,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This cross means I forgot what goes in that spot, so you''ll have to figure
-    it out yourself.
+  m_text: 'The red X means I forgot what goes in that spot, but it''s not the ingredient
+    that''s crossed out.
 
 
-    This means there are 2 spaces next to the ingredient,
+    This means there are 2 spaces between the ingredient,
     but there may or may not be other ingredient in those spaces.
 
 '
