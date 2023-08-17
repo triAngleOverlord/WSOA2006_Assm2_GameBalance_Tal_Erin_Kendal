@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public static int labelCurrent;
 
     public Image currentTile;
+    public GameObject book;
 
     public enum Symbol
     {
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
 
         //pxConverter = GameObject.Find("Main Camera").GetComponent<PixelToWorld>();
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(book);
 
 
     }
