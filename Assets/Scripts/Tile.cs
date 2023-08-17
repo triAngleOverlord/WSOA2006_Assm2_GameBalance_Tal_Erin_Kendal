@@ -66,7 +66,7 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
             
             if (mouseDirectionCalculated == true)
             {
-
+                GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, 0);
                 rigidTile.MovePosition(pixelConverter.ConvertToWorldUnits(Input.mousePosition));
 
                 Vector2 lp;
@@ -77,6 +77,7 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
                     mouseOverTile = true;
                 else
                     mouseOverTile = false;
+
 
             }
                 
@@ -116,7 +117,7 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         var mouseX = Mathf.Abs(ogMouse.x-mouseChange.x);
         var mouseY = Mathf.Abs(ogMouse.y- mouseChange.y);
 
-        if(mouseX >1 || mouseY >1)
+        if(mouseX >0.5 || mouseY >0.5)
         {
             if (mouseX > mouseY)
             {
