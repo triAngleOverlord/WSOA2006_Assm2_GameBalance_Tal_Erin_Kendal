@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public static int labelCurrent;
 
     public Image currentTile;
-    public GameObject book;
+    public GameObject bookHolder;
 
     public enum Symbol
     {
@@ -42,16 +42,22 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        //pxConverter = GameObject.Find("Main Camera").GetComponent<PixelToWorld>();
+        
         numLevel = 1;
 
         DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(book);
+        DontDestroyOnLoad(bookHolder);
 
+    }
+
+    private void Start()
+    {
+        bookHolder = GameObject.FindGameObjectWithTag("Book");
     }
 
     public void changeLevel(int level)
     {
+
         if (level == 1)
             currentL = Level.one;
         else if (level == 2)
@@ -93,6 +99,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
+        
         submission.Clear();
         wrong = 0;
         labelCurrent = 0;
@@ -101,6 +108,7 @@ public class GameManager : MonoBehaviour
 
     public void checkSequence()//will be added to the apply button
     {
+        
         submission.Clear();
         GameObject[] allSequenceObjects = GameObject.FindGameObjectsWithTag("Sequence");
         foreach (GameObject seqObject in allSequenceObjects)
@@ -112,8 +120,11 @@ public class GameManager : MonoBehaviour
         
         for (int i = 0; i < sequence.Count; i++)
         {
+            
+
             if (sequence[i] != submission[i])
             {
+                Debug.Log(sequence[i] + "," + submission[i]);
                 correct = false;
             }
               
@@ -150,7 +161,7 @@ public class GameManager : MonoBehaviour
 
     public void tryAgain()
     {
-        SceneManager.LoadScene("Menu");/////
+        SceneManager.LoadScene("Menu");
     }
     
 
