@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,11 +13,12 @@ public class GameManager : MonoBehaviour
     public static int numLevel;
     public static int wrong;
 
-    public static int labelMax;
-    public static int labelCurrent;
+    public int labelMax;
+    public int labelCurrent;
 
     public Image currentTile;
     public GameObject bookHolder;
+    public GameObject incorrectText;
 
     public enum Symbol
     {
@@ -90,12 +92,12 @@ public class GameManager : MonoBehaviour
             case Level.four:
                 SceneManager.LoadScene("LevelFour"); sequence.Clear();
                             sequence.Add(Symbol.BBeetle); sequence.Add(Symbol.GEyeball); sequence.Add(Symbol.GTooth); sequence.Add(Symbol.BEgg);
-                labelMax = 3;
+                            labelMax = 3;
                 break;
             case Level.five:
                 SceneManager.LoadScene("LevelFive"); sequence.Clear();
                             sequence.Add(Symbol.GVile); sequence.Add(Symbol.BWing); sequence.Add(Symbol.BVile); sequence.Add(Symbol.GPlant);
-                labelMax = 3;
+                            labelMax = 3;
                 break;
         }
 
@@ -142,7 +144,7 @@ public class GameManager : MonoBehaviour
         {
             //display that the player is wrong
             wrong++;
-            Debug.Log("You are incorrect!");
+            //StartCoroutine(displayTryAgain());
 
             if (wrong == 3)
             {
@@ -162,6 +164,13 @@ public class GameManager : MonoBehaviour
     public void tryAgain()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public IEnumerator displayTryAgain()
+    {
+        incorrectText.SetActive(true);
+        yield return new WaitForSeconds(2);
+        incorrectText.SetActive(false);
     }
     
 

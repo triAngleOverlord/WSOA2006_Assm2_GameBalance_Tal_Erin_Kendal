@@ -10,6 +10,12 @@ public class LabelSwitching : MonoBehaviour
 
     [SerializeField] GameObject book;
     [SerializeField] GameObject selectionBox;
+    public int labelMax;
+
+    private void Start()
+    {
+        labelMax = GameManager.Instance.labelMax;
+    }
 
 
     public void GreenEgg()
