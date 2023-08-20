@@ -106,6 +106,11 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
         {
             Debug.Log("Right click");
             book.SetActive(true);
+            var another = GameObject.Find("SelectBox");
+            if(another != null)
+            {
+                another.SetActive(false);
+            }
             selectBox.SetActive(true);
             GameManager.Instance.currentTile = GetComponent<Image>();
         }

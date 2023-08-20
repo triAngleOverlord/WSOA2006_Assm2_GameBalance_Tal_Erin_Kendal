@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1515978313539717429}
   - component: {fileID: 1515978313539717430}
-  - component: {fileID: 1515978313539717431}
   - component: {fileID: 697543304144353835}
   m_Layer: 0
   m_Name: GameManager
@@ -48,23 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequence: 
   submission: 
-  pxConverter: {fileID: 1515978313539717431}
+  currentL: 1
   currentTile: {fileID: 0}
---- !u!114 &1515978313539717431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515978313539717432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36b2d347ac1965e42b03178c7f1a7b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WorldUnitsInCamera: {x: 0, y: 0}
-  WorldToPixelAmount: {x: 0, y: 0}
-  Camera: {fileID: 0}
+  bookHolder: {fileID: 0}
 --- !u!114 &697543304144353835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,3 +79,4 @@ MonoBehaviour:
   greenEye: {fileID: 21300000, guid: 3d7fc609778edba41a63dd3bfcdb819c, type: 3}
   blueEye: {fileID: 21300000, guid: 94fc1f284a047194e8c85de50164d922, type: 3}
   book: {fileID: 0}
+  selectionBox: {fileID: 0}

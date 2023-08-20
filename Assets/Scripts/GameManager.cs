@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public static int labelCurrent;
 
     public Image currentTile;
-    public GameObject bookHolder;
+    public GameObject incorrectTXT;
+    //public GameObject bookHolder;
 
     public enum Symbol
     {
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public enum Level
     {
-        menu ,one, two, three, four, five
+        menu ,one, two, three, four, five, end
     }
 
     public void Awake()
@@ -46,13 +47,12 @@ public class GameManager : MonoBehaviour
         numLevel = 1;
 
         DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(bookHolder);
 
     }
 
     private void Start()
     {
-        bookHolder = GameObject.FindGameObjectWithTag("Book");
+        //bookHolder = GameObject.FindGameObjectWithTag("Book");
     }
 
     public void changeLevel(int level)
@@ -68,6 +68,8 @@ public class GameManager : MonoBehaviour
             currentL = Level.four;
         else if (level == 5)
             currentL = Level.five;
+        else if (level == 6)
+            currentL = Level.end;
 
 
         switch (currentL)
@@ -97,6 +99,8 @@ public class GameManager : MonoBehaviour
                             sequence.Add(Symbol.GVile); sequence.Add(Symbol.BWing); sequence.Add(Symbol.BVile); sequence.Add(Symbol.GPlant);
                 labelMax = 3;
                 break;
+            case Level.end: SceneManager.LoadScene("EndScene");
+                break;
         }
 
         
@@ -116,39 +120,40 @@ public class GameManager : MonoBehaviour
                 submission.Add(seqObject.transform.GetComponent<GridSlot>().symbol);
             }
 
-        bool correct = true;
-        
-        for (int i = 0; i < sequence.Count; i++)
+        if (sequence.Count != 0)
         {
-            
+            bool correct = true;
 
-            if (sequence[i] != submission[i])
+            for (int i = 0; i < sequence.Count; i++)
             {
-                Debug.Log(sequence[i] + "," + submission[i]);
-                correct = false;
+                if (sequence[i] != submission[i])
+                {
+                    Debug.Log(sequence[i] + "," + submission[i]);
+                    correct = false;
+                }
+
             }
-              
-        }
-
-        if (correct == true)
-        {
-            //next level load
-            Debug.Log("You are correct!");
-            numLevel++;
-            changeLevel(numLevel);
-            
-        }
-        else
-        {
-            //display that the player is wrong
-            wrong++;
-            Debug.Log("You are incorrect!");
-
-            if (wrong == 3)
+            if (correct == true)
             {
-                SceneManager.LoadScene("LoseScene");
+                //next level load
+                Debug.Log("You are correct!");
+                numLevel++;
+                changeLevel(numLevel);
+
             }
-                
+            else if (correct == false)
+            {
+                //display that the player is wrong
+                wrong++;
+                Debug.Log("You are incorrect!");
+                Instantiate(incorrectTXT, GameObject.Find("Canvas").transform);
+
+                if (wrong == 3)
+                {
+                    SceneManager.LoadScene("LoseScene");
+                }
+
+            }
         }
 
     }
