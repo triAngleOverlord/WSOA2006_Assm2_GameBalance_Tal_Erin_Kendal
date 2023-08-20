@@ -1946,6 +1946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlidingTiles (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8236892449193206076, guid: 4fc0b4bcb85b619408aab06b0467cbf9, type: 3}
+      propertyPath: m_TagString
+      value: Reference
+      objectReference: {fileID: 0}
     - target: {fileID: 8236892449193206079, guid: 4fc0b4bcb85b619408aab06b0467cbf9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3073,6 +3077,10 @@ PrefabInstance:
     - target: {fileID: 8236892449193206076, guid: 4fc0b4bcb85b619408aab06b0467cbf9, type: 3}
       propertyPath: m_Name
       value: SlidingTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236892449193206076, guid: 4fc0b4bcb85b619408aab06b0467cbf9, type: 3}
+      propertyPath: m_TagString
+      value: Reference
       objectReference: {fileID: 0}
     - target: {fileID: 8236892449193206079, guid: 4fc0b4bcb85b619408aab06b0467cbf9, type: 3}
       propertyPath: m_Pivot.x

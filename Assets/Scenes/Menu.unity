@@ -792,6 +792,10 @@ PrefabInstance:
       propertyPath: incorrectTXT
       value: 
       objectReference: {fileID: 1064341446821015395, guid: 8f82761c4f7f9e44b8c04b83651de89f, type: 3}
+    - target: {fileID: 1515978313539717430, guid: 6067e15f60547124890a17668b3d3f05, type: 3}
+      propertyPath: sequence.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1515978313539717432, guid: 6067e15f60547124890a17668b3d3f05, type: 3}
       propertyPath: m_Name
       value: GameManager
