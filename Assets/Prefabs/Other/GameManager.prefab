@@ -49,7 +49,7 @@ MonoBehaviour:
   submission: 
   currentL: 1
   currentTile: {fileID: 0}
-  bookHolder: {fileID: 0}
+  incorrectTXT: {fileID: 1064341446821015395, guid: 8f82761c4f7f9e44b8c04b83651de89f, type: 3}
 --- !u!114 &697543304144353835
 MonoBehaviour:
   m_ObjectHideFlags: 0
