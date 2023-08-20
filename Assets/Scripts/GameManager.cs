@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject seqObject in allSequenceObjects)
             {
                 submission.Add(seqObject.transform.GetComponent<GridSlot>().symbol);
+            Debug.Log(seqObject.name);
             }
 
         if (sequence.Count != 0)
@@ -128,7 +129,7 @@ public class GameManager : MonoBehaviour
             {
                 if (sequence[i] != submission[i])
                 {
-                    Debug.Log(sequence[i] + "," + submission[i]);
+                    Debug.Log(i.ToString()+ sequence[i] + "," + submission[i]);
                     correct = false;
                 }
 

@@ -18,6 +18,7 @@ public class GridSlot : MonoBehaviour, IDropHandler
                 if (sequenceBL == true)
                 {
                     symbol = tile.symbol;
+                    Debug.Log("Dropped a :"+ droppedTile.name + tile.symbol + " and is now " + symbol);
                 }
 
             }

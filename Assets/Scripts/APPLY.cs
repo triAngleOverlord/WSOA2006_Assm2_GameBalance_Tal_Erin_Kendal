@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class APPLY : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameManager Manager;
     public void Awake()
     {

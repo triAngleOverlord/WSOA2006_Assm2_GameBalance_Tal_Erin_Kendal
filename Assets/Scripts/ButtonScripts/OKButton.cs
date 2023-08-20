@@ -1,12 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class OKButton : MonoBehaviour
 {
     public GameManager manager;
     public void OnPlayButton()
     {
-        SceneManager.LoadScene("LevelOne");
         manager.changeLevel(1);
     }
 
