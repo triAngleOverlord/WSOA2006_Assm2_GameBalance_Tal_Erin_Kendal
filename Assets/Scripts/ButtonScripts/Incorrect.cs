@@ -19,7 +19,7 @@ public class Incorrect : MonoBehaviour
 
     public IEnumerator incorrectLiveTime()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 }
